@@ -1,7 +1,7 @@
 import graphviz
 
-# a = r"C:\Users\filba\Downloads\временные файлы\graphs\outputs\adjacency_matrix_13.txt"
-a = r"C:\Users\filba\Downloads\временные файлы\graphs\outputs\matrix.txt"
+# a = r"adjacency_matrix_13.txt"
+a = r"matrix.txt"
 dot = graphviz.Graph('graph', comment='A Round Graph')
 with open(a, 'r') as file:
     nodes = len(file.readline().split())
