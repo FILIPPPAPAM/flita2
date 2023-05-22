@@ -1,11 +1,11 @@
 import graphviz
 
-# a = r"adjacency_matrix_13.txt"
-a = r"matrix.txt"
+a = r"adjacency_matrix_0.txt"
+# a = r"matrix.txt"
 dot = graphviz.Graph('graph', comment='A Round Graph')
 with open(a, 'r') as file:
     nodes = len(file.readline().split())
-for i in range(nodes):
+for i in range(1, nodes +1):
     dot.node(str(i), str(i), fontsize='20')
 with open(a, 'r') as file:
     adj = [line.split() for line in file]
@@ -15,7 +15,7 @@ for i in range(nodes):
             continue
         weight = int(adj[i][j])
         if weight != 0:
-            dot.edge(str(i), str(j), xlabel=str(weight))
+            dot.edge(str(i+1), str(j+1), xlabel=str(weight))
         adj[i][j] = 'a'
         adj[j][i] = 'a'
 dot.render('doctest-output/round-table.gv', view=True)
